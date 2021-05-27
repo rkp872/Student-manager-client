@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import handleUpdate from "./AddStudent";
-import api from "./../../const";
+import { api } from "./../const";
 
 export default class GetAllStydents extends Component {
   constructor(props) {
