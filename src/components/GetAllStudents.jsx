@@ -3,6 +3,7 @@ import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import handleUpdate from "./AddStudent";
+import api from "./../../const";
 
 export default class GetAllStydents extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class GetAllStydents extends Component {
   }
   handleDelete(id) {
     axios
-      .delete(`/student/${id}`)
+      .delete(`${api}/student/${id}`)
       .then((result) => {
         this.props.history.push({
           pathname: "/",
@@ -60,7 +61,7 @@ export default class GetAllStydents extends Component {
   }
   getData() {
     axios
-      .get("/student/")
+      .get(`${api}/student/`)
       .then((res) => {
         console.log(res);
         var data = res.data;

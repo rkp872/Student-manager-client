@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import api from "./../../const";
 
 export default class AddStudent extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class AddStudent extends Component {
         formData.append("pic", this.state.pic);
 
         axios
-          .post("/student/", formData)
+          .post(`${api}/student/`, formData)
           .then((result) => {
             this.props.history.push({
               pathname: "/",
@@ -170,4 +171,3 @@ export default class AddStudent extends Component {
     );
   }
 }
-

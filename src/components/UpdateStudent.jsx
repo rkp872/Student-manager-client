@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { data } from "jquery";
+import api from "./../../const";
 
 export default class UpdateStudent extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export default class UpdateStudent extends Component {
         formData.append("pic", this.state.pic);
 
         axios
-          .put(`/student/${this.state.id}`, formData)
+          .put(`${api}/student/${this.state.id}`, formData)
           .then((result) => {
             this.props.history.push({
               pathname: "/",
